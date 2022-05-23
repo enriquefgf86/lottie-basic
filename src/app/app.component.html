@@ -1,0 +1,17 @@
+<p *ngIf="fromUrl">Here the animation with a imported json file</p>
+<p *ngIf="!fromUrl">Here the animation with a imported from url path</p>
+
+<ng-lottie
+  [options]="options"
+  (animationCreated)="animationCreated($event)"
+></ng-lottie>
+
+<button (click)="chooseAnimationSource()">Change source</button>
+
+<button (click)="stopAnimation()">
+  {{ !fromUrl ? 'Dog stop!!' : 'Stop Rocket Elon!!' }}
+</button>
+
+<button (click)="triggerAnimation()">
+  {{ !fromUrl ? 'Walk Dog!!' : 'Launch it Elon Elon!!' }}
+</button>
